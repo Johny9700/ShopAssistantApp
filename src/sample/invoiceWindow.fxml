@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="30.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.InvoiceWindowController">
+    <children>
+      <Label text="Wystaw fakturę">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+        <HBox>
+            <children>
+                <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="640.0" spacing="25.0">
+                    <children>
+                  <Label text="WybierzProdukt">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                        <HBox alignment="CENTER_LEFT" prefWidth="565.0">
+                            <children>
+                                <Label prefHeight="35.0" prefWidth="140.0" text="Nazwa:">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="nameTextField" onKeyPressed="#nameTextFieldKeyPressed" prefHeight="35.0" prefWidth="220.0">
+                                    <HBox.margin>
+                                        <Insets right="35.0" />
+                                    </HBox.margin>
+                                </TextField>
+                                <Button fx:id="filterButton" mnemonicParsing="false" onAction="#filterButtonClicked" prefHeight="35.0" text="Filtruj">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="20.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefWidth="565.0">
+                            <children>
+                                <Label prefHeight="35.0" prefWidth="140.0" text="Kategoria:">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Label>
+                        <ChoiceBox fx:id="categoryChoiceBox" prefHeight="35.0" prefWidth="220.0">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                                <Button fx:id="clearFiltersButton" disable="true" mnemonicParsing="false" onAction="#clearFiltersButtonClicked" prefHeight="35.0" text="Wyczyść filtry" underline="true">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="20.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <ScrollPane fx:id="productsScrollPane" prefHeight="310.0" vbarPolicy="ALWAYS">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin></ScrollPane>
+                    </children>
+                    <padding>
+                        <Insets left="80.0" right="40.0" />
+                    </padding>
+                </VBox>
+                <VBox fx:id="billsVBox" alignment="CENTER" prefWidth="640.0" spacing="25.0">
+                    <children>
+                  <Label text="Dane na fakturze">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                        <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="40.0">
+                            <children>
+                                <Label prefWidth="120.0" text="NIP:">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Label>
+                        <TextField fx:id="nipTextField" prefHeight="35.0" prefWidth="350.0" />
+                            </children>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="80.0" layoutY="10.0" prefWidth="200.0" spacing="40.0">
+                     <children>
+                        <Label prefWidth="120.0" text="Adres:">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="addressTextField" prefHeight="35.0" prefWidth="350.0" />
+                     </children>
+                  </HBox>
+                        <ScrollPane fx:id="productsOnBillScrollPane" prefHeight="240.0" vbarPolicy="ALWAYS">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin></ScrollPane>
+                  <HBox alignment="CENTER_LEFT" layoutX="50.0" layoutY="75.0" prefWidth="200.0" spacing="40.0">
+                     <children>
+                        <Label prefWidth="120.0" text="Cena:">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="finalPriceLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="13.0" prefHeight="30.0" prefWidth="350.0" text="0,00">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                    </children>
+                    <padding>
+                        <Insets left="40.0" right="80.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefWidth="200.0" spacing="100.0">
+            <children>
+                <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" text="OK">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+                <Button fx:id="returnButton" mnemonicParsing="false" onAction="#returnButtonClicked" text="Powrót">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>

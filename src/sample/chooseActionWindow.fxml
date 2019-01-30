@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ChooseActionWindowController">
+   <children>
+      <Label text="Co chcesz zrobić" textAlignment="CENTER">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="50.0" top="50.0" />
+         </VBox.margin>
+      </Label>
+      <GridPane alignment="CENTER" prefHeight="450.0" vgap="20.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="supplyButton" mnemonicParsing="false" onAction="#supplyButtonClicked" prefHeight="190.0" prefWidth="200.0" text="Wprowadź dostawę" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="inventoryButton" mnemonicParsing="false" onAction="#inventoryButtonClicked" prefHeight="190.0" prefWidth="200.0" text="Pokaż stan magazynowy" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="addClientButton" mnemonicParsing="false" onAction="#addClientButtonClicked" prefHeight="190.0" prefWidth="200.0" text="Dodaj konto klienta" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="addProductButton" mnemonicParsing="false" onAction="#addProductButtonClicked" prefHeight="190.0" prefWidth="200.0" text="Dodaj produkt do oferty" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="removeProductButton" mnemonicParsing="false" onAction="#removeProductButtonClicked" prefHeight="190.0" prefWidth="200.0" text="Usuń produkt  z oferty" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="billButton" mnemonicParsing="false" onAction="#billButtonClicked" prefHeight="190.0" prefWidth="200.0" text="Wystaw dowód sprzedaży" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="addCategoryButton" mnemonicParsing="false" onAction="#addCategoryButtonClicked" prefHeight="190.0" prefWidth="200.0" text="Dodaj kategorię" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="24.0" />
+               </font></Button>
+            <Button fx:id="clientBillsButton" mnemonicParsing="false" onAction="#clientBillsButtonClicked" prefHeight="190.0" prefWidth="200.0" text="Pokaż zakupy klienta" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4">
+               <font>
+                  <Font size="24.0" />
+               </font></Button>
+         </children>
+      </GridPane>
+      <Button fx:id="returnButton" mnemonicParsing="false" onAction="#returnButtonClicked" text="Powrót" textAlignment="CENTER">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="50.0" top="50.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>

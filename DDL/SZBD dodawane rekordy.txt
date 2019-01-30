@@ -1,0 +1,81 @@
+﻿INSERT INTO klienci ("imię", "nazwisko")
+VALUES  ('Jan', 'Kowalski'),
+    ('Jan', 'Nowak'),
+    ('Paulina', 'Sobczak'),
+    ('Henryk', 'Bąk'),
+    ('Kazimierz', 'Górski'),
+    ('Irena', 'Wójcik'),
+    ('Marian', 'Chmielewski'),
+    ('Małgorzata', 'Jaworska'),
+    ('Ewa', 'Duda'),
+    ('Jakub', 'Malinowski'),
+    ('Jadwiga', 'Brzezińska'),
+    ('Roman', 'Sawicki'),
+    ('Marcin', 'Szymczak'),
+    ('Joanna', 'Baranowska'),
+    ('Maciej', 'Szczepański'),
+    ('Czesław', 'Wróbel'),
+    ('Grażyna', 'Górska'),
+    ('Wanda', 'Krawczyk'),
+    ('Renata', 'Urbańska'),
+    ('Wiesława', 'Tomaszewska'),
+    ('Bożena', 'Baranowska'),
+    ('Ewelina', 'Malinowska'),
+    ('Anna', 'Krajewska'),
+    ('Mieczysław', 'Zając');
+SELECT * FROM klienci;
+
+
+INSERT INTO kategorie ("nazwa")
+VALUES ('Procesory'),
+    ('Płyty główne'),
+	('Pamięci RAM'),
+	('Dyski twarde'),
+	('Zasilacze'),
+	('Monitory'),
+	('Klawiatury'),
+	('Myszki'),
+	('Kable i przewody');
+SELECT * FROM kategorie;
+
+
+ALTER TABLE firmy
+    ALTER COLUMN nip SET DATA TYPE BIGINT;
+ALTER TABLE produkty
+    ALTER COLUMN nip SET DATA TYPE BIGINT;
+ALTER TABLE zamowienia
+    ALTER COLUMN nip SET DATA TYPE BIGINT;
+ALTER TABLE dowody_sprzedazy
+    ALTER COLUMN nip SET DATA TYPE BIGINT;
+
+
+INSERT INTO firmy ("nip", "nazwa")
+VALUES (7393751349, 'ABC'),
+	(8363553119, 'eHURT'),
+	(5882212160, 'Twoja Hurtownia'),
+	(9550389663, 'QWERTY Sp. z o.o. '),
+	(5809736095, 'Elektronik'),
+	(1403991219, 'Hurtownia 1'),
+	(2428383416, 'Hurtownia 2'),
+	(2388978941, 'Dostawca 1'),
+	(1103456290, 'Dostawca 2'),
+	(4636975864, 'Dostawca 3');
+SELECT * FROM firmy
+
+
+INSERT INTO sklepy ("adres")
+VALUES ( 'Poznan, Kórnicka 5'),
+	( 'Warszawa, Długa 85');
+SELECT * FROM sklepy;
+
+
+INSERT INTO sprzedawcy ("imie", "nazwisko", "nr_telefonu", "id_sklepu", "widoczny")
+VALUES ('Marek', 'Adamczyk', 654123000, 1, 'TAK'),
+	('Jarosław', 'Laskowski', 450200789, 1, 'TAK'),
+	('Jakub ', 'Pietrzak', 580473202, 2, 'TAK'),
+	('Agata', 'Pawlak', 500741589, 2, 'TAK');
+
+SELECT * FROM sprzedawcy;
+
+ALTER TABLE dowody_sprzedazy ALTER COLUMN data SET DEFAULT CURRENT_DATE;
+ALTER TABLE zamowienia ALTER COLUMN data SET DEFAULT CURRENT_DATE;

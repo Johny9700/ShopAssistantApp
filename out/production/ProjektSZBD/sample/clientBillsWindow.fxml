@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="30.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ClientBillsWindowController">
+    <children>
+        <HBox>
+            <children>
+                <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="640.0" spacing="30.0">
+                    <children>
+                        <Label text="Wybierz klienta">
+                            <font>
+                                <Font size="36.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefWidth="565.0">
+                            <children>
+                                <Label prefHeight="35.0" prefWidth="130.0" text="Nazwisko:">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="surnameTextField" onKeyPressed="#surnameTextFieldKeyPressed" prefHeight="35.0" prefWidth="250.0">
+                                    <HBox.margin>
+                                        <Insets right="35.0" />
+                                    </HBox.margin>
+                                </TextField>
+                                <Button fx:id="clientFilterButton" mnemonicParsing="false" onAction="#clientFilterButtonClicked" prefHeight="35.0" text="Filtruj">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="20.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefWidth="565.0">
+                            <children>
+                                <Label prefHeight="35.0" prefWidth="130.0" text="E-mail:">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="emailTextField" onKeyPressed="#emailTextFieldKeyPressed" prefHeight="35.0" prefWidth="250.0">
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin></TextField>
+                                <Button fx:id="clientClearFiltersButton" disable="true" mnemonicParsing="false" onAction="#clientClearFiltersButtonClicked" prefHeight="35.0" text="Wyczyść filtry" underline="true">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="20.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <ScrollPane fx:id="clientsScrollPane" prefHeight="300.0" vbarPolicy="ALWAYS">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin></ScrollPane>
+                    </children>
+                    <padding>
+                        <Insets left="80.0" right="40.0" />
+                    </padding>
+                </VBox>
+                <VBox fx:id="billsVBox" alignment="CENTER" disable="true" prefWidth="640.0" spacing="30.0">
+                    <children>
+                        <Label text="Lista rachunków">
+                            <font>
+                                <Font size="36.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER" prefWidth="200.0" spacing="50.0">
+                            <children>
+                                <CheckBox fx:id="receiptCheckBox" mnemonicParsing="false" prefHeight="35.0" selected="true" text="Paragony" />
+                                <CheckBox fx:id="invoiceCheckBox" mnemonicParsing="false" prefHeight="35.0" selected="true" text="Faktury" />
+                                <Button fx:id="billsFilterButton" mnemonicParsing="false" onAction="#billsFilterButtonClicked" prefHeight="35.0" text="Filtruj">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="billsClearFiltersButton" disable="true" mnemonicParsing="false" onAction="#billsClearFiltersButtonClicked" prefHeight="35.0" text="Wyczyść filtry" underline="true">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </HBox>
+                        <ScrollPane fx:id="billsScrollPane" prefHeight="367.0" vbarPolicy="ALWAYS">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin></ScrollPane>
+                    </children>
+                    <padding>
+                        <Insets left="40.0" right="80.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </HBox>
+        <Button fx:id="returnButton" mnemonicParsing="false" onAction="#returnButtonClicked" text="Powrót">
+            <font>
+                <Font size="24.0" />
+            </font>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Button>
+    </children>
+</VBox>

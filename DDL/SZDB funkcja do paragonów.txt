@@ -1,0 +1,28 @@
+DROP SEQUENCE IF EXISTS paragony_seq CASCADE;
+DROP SEQUENCE IF EXISTS faktury_seq CASCADE;
+CREATE SEQUENCE paragony_seq START WITH 100001;
+CREATE SEQUENCE faktury_seq START WITH 100001;
+
+ALTER TABLE dowody_sprzedazy
+  ALTER COLUMN nr_faktury SET DATA TYPE TEXT;
+
+ALTER TABLE dowody_sprzedazy
+  ALTER COLUMN nr_paragonu SET DATA TYPE TEXT;
+
+
+CREATE OR REPLACE FUNCTION numer_rachunku(rodzaj TEXT) RETURNS TEXT AS
+    $BODY$
+    DECLARE returnVal TEXT;
+    DECLARE numer INTEGER;
+    BEGIN
+        IF rodzaj = 'F' THEN
+            numer := nextval('paragony_seq');
+            returnVal := 'FAV-' || numer;
+        ELSE
+            numer := nextval('faktury_seq');
+            returnVal := 'P' || numer;
+        END IF;
+        Return returnVal;
+    END;
+    $BODY$
+LANGUAGE plpgsql VOLATILE;
